@@ -1,0 +1,21 @@
+server:
+  port: 9090
+  
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: order.one.teste01
+          binder: local_rabbit
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 35.231.150.6
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
